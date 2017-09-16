@@ -9,14 +9,14 @@ RUN cd /tmp && \
     autoreconf && \
     ./configure && \
     make && \
-    make install
-RUN cd /tmp && \
+    make install && \
+    cd /tmp && \
     git clone https://github.com/isc-projects/kea.git && \
     cd kea && \
     autoreconf --install && \
     ./configure && \
     make && \
-    make install
-RUN rm -rf /tmp/* && \
+    make install && \
+    rm -rf /tmp/* && \
     apk del alpine-sdk git autoconf automake pkgconfig && \
     rm -rf /var/cache/apk/*
