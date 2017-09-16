@@ -17,3 +17,6 @@ RUN cd /tmp && \
     ./configure && \
     make && \
     make install
+RUN rm -rf /tmp/* && \
+    apk del alpine-sdk git autoconf automake pkgconfig && \
+    rm -rf /var/cache/apk/*
