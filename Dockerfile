@@ -1,6 +1,6 @@
 FROM alpine:latest
 LABEL maintainer="shouhei.yamaguchi.ssi@gmail.com"
-EXPOSE 67/udp 67/udp
+EXPOSE 67/udp
 RUN apk update && \
     apk add alpine-sdk git autoconf automake openssl openssl-dev boost-dev libtool pkgconfig && \
     cd /tmp && \
