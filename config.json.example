@@ -1,0 +1,37 @@
+{
+    "Dhcp4": {
+        "interfaces-config": {
+            "interfaces": [
+                "*"
+            ]
+        },
+        "lease-database": {
+            "type": "memfile",
+            "name": "leases4"
+        },
+        "valid-lifetime": 4000,
+        "subnet4": [
+            {
+                "subnet": "192.168.10.0/24",
+                "pools": [
+                    {
+                        "pool": "192.168.10.31 - 192.168.10.254"
+                    }
+                ]
+            }
+        ]
+    },
+    "Logging": {
+        "loggers": [
+            {
+                "name": "kea-dhcp4",
+                "output_options": [
+                    {
+                        "output": "stdout"
+                    }
+                ],
+                "severity": "WARN"
+            }
+        ]
+    }
+}
