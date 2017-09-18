@@ -2,7 +2,7 @@ FROM alpine:latest
 LABEL maintainer="shouhei.yamaguchi.ssi@gmail.com"
 EXPOSE 67/udp
 RUN apk update && \
-    apk add tini alpine-sdk git autoconf automake openssl openssl-dev boost-dev libtool pkgconfig && \
+    apk add alpine-sdk git autoconf automake openssl openssl-dev boost-dev libtool pkgconfig && \
     cd /tmp && \
     git clone -b 1.2.x https://github.com/log4cplus/log4cplus.git && \
     cd log4cplus && \
@@ -21,4 +21,3 @@ RUN apk update && \
     rm -rf /tmp/* && \
     apk del alpine-sdk git autoconf automake pkgconfig && \
     rm -rf /var/cache/apk/*
-ENTRYPOINT ["/sbin/tini", "--"]
