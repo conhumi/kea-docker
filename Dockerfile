@@ -12,7 +12,7 @@ RUN apk update && \
     make && \
     make install && \
     cd /tmp && \
-    git clone -b v1_2_0 https://github.com/isc-projects/kea.git && \
+    git clone -b v1_3_0 https://github.com/isc-projects/kea.git && \
     cd kea && \
     autoreconf --install && \
     ./configure && \
